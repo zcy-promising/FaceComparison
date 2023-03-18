@@ -32,9 +32,8 @@ public class Camera {
         Mat dtc=new Mat();
          //输出帧
          //openCV自带的人脸模型数据
-        String haarcascades="D:\\Code\\Project\\face_comparison\\src\\main\\resources\\static\\haarcascade_frontalface_default.xml";
          //人脸特征提取器
-        CascadeClassifier classifier=new CascadeClassifier(haarcascades);
+        CascadeClassifier classifier=new CascadeClassifier(path.haarcascades);
          //人脸坐标的集合
         MatOfRect faceDetections=new MatOfRect();
         Imgproc.cvtColor(src,dtc,Imgproc.COLOR_BGR2GRAY);
@@ -75,8 +74,8 @@ public class Camera {
      * @param src
      * @return boolean
      */
-    public static boolean compareFace(Mat src){
-         Mat compare= Imgcodecs.imread(".\\static\\saveFace\\wlop.png");
+    public static boolean compareFace(Mat src,String name){
+         Mat compare= Imgcodecs.imread(path.faceSave+name+".jpg");
          Mat hist1=new Mat();
          Mat hist2=new Mat();
 
@@ -95,4 +94,21 @@ public class Camera {
         }
          return Imgproc.compareHist(hist1,hist2,Imgproc.CV_COMP_CORREL)>0.72;
     }
+
+    /**
+     * 裁剪图片并保存
+     * @param src
+     * @param rect
+     * @return
+     */
+    public static void imageCut(Mat src, Rect rect,String name){
+        //截取图片
+        Mat dtc=src.submat(rect);
+        Size size=new Size(rect.width,rect.height);
+        //图片的缩放
+        Imgproc.resize(dtc,dtc,size);
+        //存放
+        Imgcodecs.imwrite(path.faceSave+name+".jpg",dtc);
+    }
+
 }
