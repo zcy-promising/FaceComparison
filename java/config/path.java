@@ -1,3 +1,5 @@
+package config;
+
 //存放固定地址
 public class path {
     //openCV自带的人脸模型数据
