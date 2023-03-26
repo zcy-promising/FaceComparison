@@ -1,3 +1,6 @@
+package utils;
+
+import config.path;
 import org.opencv.core.*;
 import org.opencv.highgui.HighGui;
 import org.opencv.imgcodecs.Imgcodecs;
@@ -5,10 +8,9 @@ import org.opencv.imgproc.Imgproc;
 import org.opencv.objdetect.CascadeClassifier;
 import org.opencv.videoio.VideoCapture;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
-public class Camera {
+public class cameraUtil {
     /**
      * 打开摄像头并且抓取
      *
