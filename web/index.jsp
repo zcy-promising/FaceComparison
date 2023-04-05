@@ -1,3 +1,6 @@
+<%--<%@ page import="java.sql.Statement" %>--%>
+<%--<%@ page import="utils.DBUtil" %>--%>
+<%--<%@ page import="java.sql.ResultSet" %>--%>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -63,9 +66,26 @@
     <input type="text" id="username" name="username" required>
     <label for="password">Password</label>
     <input type="password" id="password" name="password" required>
-    <input type="submit" value="Login">
+    <input type="submit" value="login" onclick="userLogin()">
   </form>
 </div>
 </div>
 </body>
+<script>
+  function userLogin() {
+<%--    <%--%>
+<%--    String username= request.getParameter("username");--%>
+<%--    String password= request.getParameter("password");--%>
+<%--    //获取数据库--%>
+<%--    Statement statement=DBUtil.getStatement();--%>
+<%--    String sql="select * from user";--%>
+<%--    ResultSet rs=statement.executeQuery(sql);--%>
+<%--    if (rs!=null){--%>
+<%--      //跳转登录--%>
+<%--      System.out.println("登录成功");--%>
+<%--    }--%>
+<%--    %>--%>
+  }
+</script>
+
 </html>
