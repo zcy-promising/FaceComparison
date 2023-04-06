@@ -27,14 +27,22 @@ public class cameraUtil {
     }
 
     /**
+     * 释放摄像头
+     * @param capture
+     */
+    public static void close(VideoCapture capture){
+        capture.release();
+    }
+
+    /**
      * 检测人脸坐标
      *
      * @param src
      * @return faceDetections
      */
     public static MatOfRect faceDetections(Mat src) {
-        Mat dtc = new Mat();
         //输出帧
+        Mat dtc;
         //openCV自带的人脸模型数据
         //人脸特征提取器
         CascadeClassifier classifier = new CascadeClassifier(path.haarcascades);
