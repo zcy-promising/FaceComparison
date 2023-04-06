@@ -1,13 +1,7 @@
-<%--<%@ page import="java.sql.Statement" %>--%>
-<%--<%@ page import="utils.DBUtil" %>--%>
-<%--<%@ page import="java.sql.ResultSet" %>--%>
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2023/3/18
-  Time: 10:27
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="utils.DBUtil" %>
+<%@ page import="java.sql.ResultSet" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -69,22 +63,21 @@
     <input type="submit" value="login" onclick="userLogin()">
   </form>
 </div>
-</div>
 </body>
 <script>
   function userLogin() {
-<%--    <%--%>
-<%--    String username= request.getParameter("username");--%>
-<%--    String password= request.getParameter("password");--%>
-<%--    //获取数据库--%>
-<%--    Statement statement=DBUtil.getStatement();--%>
-<%--    String sql="select * from user";--%>
-<%--    ResultSet rs=statement.executeQuery(sql);--%>
-<%--    if (rs!=null){--%>
-<%--      //跳转登录--%>
-<%--      System.out.println("登录成功");--%>
-<%--    }--%>
-<%--    %>--%>
+    <%
+    String username= request.getParameter("username");
+    String password= request.getParameter("password");
+    //获取数据库
+    Statement statement=DBUtil.getStatement();
+    String sql="select * from user";
+    ResultSet rs=statement.executeQuery(sql);
+    if (rs!=null){
+      //跳转登录
+      System.out.println("登录成功");
+    }
+    %>
   }
 </script>
 
